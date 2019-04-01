@@ -9,7 +9,7 @@
 	"homepage" : "https://www.xento.app",
 	"autoload" : {
 		"psr-4" : {
-			"Coro\\" : "src/"
+			"Xento\\" : "src/"
 		}
 	},
 	"require" : {
