@@ -1,2 +1,2 @@
 # coro
-Xento Application
+Xento Application version 1.0.0
