@@ -1,0 +1,21 @@
+{
+	"name" : "xento-app/coro",
+	"type" : "Library",
+	"description" : "Xento Application",
+	"license" : "BSD-3-Clause",
+	"keywords" : [
+		"xentoApplication"
+	],
+	"homepage" : "https://www.xento.app",
+	"autoload" : {
+		"psr-4" : {
+			"Coro\\" : "src/"
+		}
+	},
+	"require" : {
+		"php" : "^^7.0",
+		"whichbrowser/parser": "^2.0"
+	},
+	"minimum-stability" : "dev",
+	"prefer-stable" : true
+}
