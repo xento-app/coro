@@ -13,7 +13,7 @@
 		}
 	},
 	"require" : {
-		"php" : "^^7.0",
+		"php" : "^7.0",
 		"whichbrowser/parser": "^2.0"
 	},
 	"minimum-stability" : "dev",
