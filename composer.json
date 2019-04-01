@@ -4,7 +4,8 @@
 	"description" : "Xento Application",
 	"license" : "BSD-3-Clause",
 	"keywords" : [
-		"xentoApplication"
+		"xento",
+		"application"
 	],
 	"homepage" : "https://www.xento.app",
 	"autoload" : {
