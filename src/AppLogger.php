@@ -79,8 +79,8 @@ class AppLogger
      */
     public static function LogException($e, $dir = NULL, $message = NULL)
     {
-        if (! is_null(\Xento\AppCore::registry('ip'))) {
-            $addressIp = \Xento\AppCore::registry('ip');
+        if (! is_null(\Xento\AppCore::registry('ipConnection'))) {
+            $addressIp = \Xento\AppCore::registry('ipConnection');
         } else {
             $addressIp = '127.0.0.1';
         }
@@ -138,8 +138,8 @@ class AppLogger
      */
     public static function LogError($error, $dir = NULL, $critical = false)
     {
-        if (! is_null(\Xento\AppCore::registry('sIp'))) {
-            $addressIp = \Xento\AppCore::registry('sIp');
+        if (! is_null(\Xento\AppCore::registry('ipConnection'))) {
+            $addressIp = \Xento\AppCore::registry('ipConnection');
         } else {
             $addressIp = '127.0.0.1';
         }
