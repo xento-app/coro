@@ -87,6 +87,9 @@ class AppLogger
 
         if (! is_null($dir)) {
             $exceptionDir = $dir;
+            if (is_bool(Developer::getInformation($exceptionDir))) {
+                mkdir(getcwd() . '/data/logs/exceptions', '0777', true);
+            }
         } else {
             $exceptionDir = getcwd() . '/data/logs/exceptions/';
             if (is_bool(Developer::getInformation($exceptionDir))) {
@@ -146,9 +149,12 @@ class AppLogger
 
         if (! is_null($dir)) {
             $errorDir = $dir;
+            if (is_boolf(Developer::getInformation($errorDir))) {
+                mkdir(getcwd() . '/data/logs/errors', '0777', true);
+            }
         } else {
             $errorDir = getcwd() . '/data/logs/errors/';
-            if (! sizeof(Developer::getInformation($errorDir))) {
+            if (is_bool(Developer::getInformation($errorDir))) {
                 mkdir(getcwd() . '/data/logs/errors', '0777', true);
                 $errorDir = getcwd() . '/data/logs/errors/';
             }
