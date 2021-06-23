@@ -178,4 +178,21 @@ class AppCore
             return false;
         }
     }
+    
+    /**
+     * @name isSendMail
+     * @access public
+     * @return boolean
+     */
+    public static function isSendMail():bool
+    {
+        $isSendMail = true;
+        if (ini_get('SMTP') == 'localhost') {
+            if (self::getHostTld() == 'localhost') {
+                $isSendMail = false;
+            }
+        }
+        
+        return $isSendMail;
+    }
 }
