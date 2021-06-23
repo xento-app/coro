@@ -170,7 +170,7 @@ class Developer
 
             $t = decoct($stat['mode'] & 0170000);
 
-            $str = (array_key_exists(octdec($t), $ts)) ? $ts[octdec($t)]{0} : 'u';
+            $str = (array_key_exists(octdec($t), $ts)) ? $ts[octdec($t)][0] : 'u';
             $str .= (($stat['mode'] & 0x0100) ? 'r' : '-') . (($stat['mode'] & 0x0080) ? 'w' : '-');
             $str .= (($stat['mode'] & 0x0040) ? (($stat['mode'] & 0x0800) ? 's' : 'x') : (($stat['mode'] & 0x0800) ? 'S' : '-'));
             $str .= (($stat['mode'] & 0x0020) ? 'r' : '-') . (($stat['mode'] & 0x0010) ? 'w' : '-');
@@ -432,7 +432,7 @@ class Developer
 
         $t = decoct($value & 0170000);
 
-        $str = (array_key_exists(octdec($t), $ts)) ? $ts[octdec($t)]{0} : 'u';
+        $str = (array_key_exists(octdec($t), $ts)) ? $ts[octdec($t)][0] : 'u';
         $str .= (($value & 0x0100) ? 'r' : '-') . (($value & 0x0080) ? 'w' : '-');
         $str .= (($value & 0x0040) ? (($value & 0x0800) ? 's' : 'x') : (($value & 0x0800) ? 'S' : '-'));
         $str .= (($value & 0x0020) ? 'r' : '-') . (($value & 0x0010) ? 'w' : '-');
