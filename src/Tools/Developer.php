@@ -441,4 +441,18 @@ class Developer
         $str .= (($value & 0x0001) ? (($value & 0x0200) ? 't' : 'x') : (($value & 0x0200) ? 'T' : '-'));
         return $str;
     }
+    
+    /**
+     *
+     * @name dateIsInBetween
+     * @access public
+     * @param \DateTime $from
+     * @param \DateTime $to
+     * @param \DateTime $subject
+     * @return boolean
+     */
+    public static function dateIsInBetween(\DateTime $from, \DateTime $to, \DateTime $subject)
+    {
+        return $subject->getTimestamp() >= $from->getTimestamp() && $subject->getTimestamp() <= $to->getTimestamp() ? true : false;
+    }
 }
