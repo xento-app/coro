@@ -149,7 +149,7 @@ class AppLogger
 
         if (! is_null($dir)) {
             $errorDir = $dir;
-            if (is_boolf(Developer::getInformation($errorDir))) {
+            if (is_bool(Developer::getInformation($errorDir))) {
                 mkdir(getcwd() . '/data/logs/errors', '0777', true);
             }
         } else {
