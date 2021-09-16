@@ -111,16 +111,18 @@ class AppLogger
 
         $data .= '--- ' . "\n";
 
-        if (! is_null(self::getEmailNotificationException())) {
+        if (strtoupper(substr(PHP_OS, 0, 3)) != 'WIN') {
+            if (! is_null(self::getEmailNotificationException())) {
 
-            $name = "Exception - Notification Application";
-            $email = "support@epa24.pl";
-            $recipient = self::getEmailNotificationException();
-            $mail_body = var_export($data, true);
-            $subject = "Exception - Notification";
-            $header = "From: " . $name . " <" . $email . ">\r\n";
+                $name = "Exception - Notification Application";
+                $email = "support@epa24.pl";
+                $recipient = self::getEmailNotificationException();
+                $mail_body = var_export($data, true);
+                $subject = "Exception - Notification";
+                $header = "From: " . $name . " <" . $email . ">\r\n";
 
-            mail($recipient, $subject, $mail_body, $header);
+                mail($recipient, $subject, $mail_body, $header);
+            }
         }
 
         $fileException = 'log.exception.' . date('Y-m-d') . '.log';
@@ -176,16 +178,18 @@ class AppLogger
         // Send Mail
         if ($critical != false) {
 
-            if (! is_null(self::getEmailNotificationError())) {
+            if (strtoupper(substr(PHP_OS, 0, 3)) != 'WIN') {
+                if (! is_null(self::getEmailNotificationError())) {
 
-                $name = "Error - Notification Application";
-                $email = "support@epa24.pl";
-                $recipient = self::getEmailNotificationException();
-                $mail_body = var_export($data, true);
-                $subject = "Error - Notification";
-                $header = "From: " . $name . " <" . $email . ">\r\n";
+                    $name = "Error - Notification Application";
+                    $email = "support@epa24.pl";
+                    $recipient = self::getEmailNotificationException();
+                    $mail_body = var_export($data, true);
+                    $subject = "Error - Notification";
+                    $header = "From: " . $name . " <" . $email . ">\r\n";
 
-                mail($recipient, $subject, $mail_body, $header);
+                    mail($recipient, $subject, $mail_body, $header);
+                }
             }
         }
 
