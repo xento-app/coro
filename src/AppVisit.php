@@ -427,6 +427,7 @@ class AppVisit extends AppConnection
         }
 
         $iterator = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($visitsDir), \RecursiveIteratorIterator::CHILD_FIRST);
+        $iterator = iterator_to_array($iterator,true);
 
         if (sizeof($iterator)) {
 
