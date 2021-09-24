@@ -151,7 +151,7 @@ class AppVisit extends AppConnection
      */
     public static function getSectionLogVisit()
     {
-        if (! in_array(self::$_separatorLogVisit, [
+        if (! in_array(self::$_sectionLogVisit, [
             'frontend',
             'backend',
             'install'
