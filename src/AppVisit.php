@@ -152,13 +152,13 @@ class AppVisit extends AppConnection
     public static function getSectionLogVisit()
     {
         if (! in_array(self::$_separatorLogVisit, [
-            'panel',
-            'admin',
+            'frontend',
+            'backend',
             'install'
         ])) {
-            return 'panel';
+            return 'fronetnd';
         }
-        return self::$_separatorLogVisit;
+        return self::$_sectionLogVisit;
     }
 
     /**
@@ -427,7 +427,7 @@ class AppVisit extends AppConnection
         }
 
         $iterator = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($visitsDir), \RecursiveIteratorIterator::CHILD_FIRST);
-        $iterator = iterator_to_array($iterator,true);
+        $iterator = iterator_to_array($iterator, true);
 
         if (sizeof($iterator)) {
 
